@@ -1,0 +1,22 @@
+﻿.search-form
+{
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input
+{
+    flex-grow: 1;
+}
+
+.nothing-found-block
+{
+    flex-grow: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

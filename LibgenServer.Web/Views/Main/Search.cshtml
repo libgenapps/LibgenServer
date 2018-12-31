@@ -1,0 +1,56 @@
+﻿@using LibgenServer.Web.ViewModels.Main
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model SearchViewModel
+
+@{
+    Layout = "~/Views/Layouts/MainLayout.cshtml";
+    ViewBag.Title = Model.SearchQuery;
+}
+
+@section Head
+{
+    <link href="~/Styles/search.css" rel="stylesheet" type="text/css" />
+}
+
+<form class="search-form" method="post" asp-controller="Main" asp-action="Index">
+    <input type="text" class="form-control search-input" id="search" name="search" value="@Model.SearchQuery"
+           placeholder="Search by title, authors, series, publisher, and ISBN without dashes" autofocus>
+</form>
+@if (Model.SearchResults.Any())
+{
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Series</th>
+                <th>Year</th>
+                <th>Publisher</th>
+                <th>Format</th>
+                <th>FileSize</th>
+                <th>Ocr</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (SearchResultItemViewModel resultItem in Model.SearchResults)
+            {
+                <tr>
+                    <td><a asp-controller="Main" asp-action="Book" asp-route-bookId="@resultItem.Id">@resultItem.Title</a></td>
+                    <td>@resultItem.Authors</td>
+                    <td>@resultItem.Series</td>
+                    <td>@resultItem.Year</td>
+                    <td>@resultItem.Publisher</td>
+                    <td>@resultItem.Format</td>
+                    <td>@resultItem.FileSize</td>
+                    <td>@(resultItem.Ocr ? "yes" : String.Empty)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="nothing-found-block">
+        <p>Nothing was found.</p>
+    </div>
+}

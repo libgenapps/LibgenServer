@@ -1,0 +1,27 @@
+﻿@using LibgenServer.Core.Common
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@(ViewBag.Title ?? "Libgen Server")</title>
+    <link href="~/Libraries/Bootstrap/css/bootstrap-4.2.1.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/main_layout.css" rel="stylesheet" type="text/css" />
+    @RenderSection("Head", false)
+</head>
+<body>
+    <div class="page-container">
+        <div class="content">
+            @RenderBody()
+        </div>
+        <footer>
+            <p>Libgen Server @(Constants.CURRENT_VERSION)</p>
+        </footer>
+    </div>
+
+    <script src="~/Libraries/jQuery/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="~/Libraries/Bootstrap/bootstrap-4.2.1.min.js" type="text/javascript"></script>
+</body>
+</html>

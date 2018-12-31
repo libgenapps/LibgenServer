@@ -1,0 +1,68 @@
+﻿.book
+{
+    padding: 24px;
+    min-width: 800px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.book-details
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.secondary-attributes
+{
+    margin-left: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-attributes
+{
+    margin-top: 16px;
+}
+
+.attribute-table-header
+{
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+}
+
+.attribute-name
+{
+    font-weight: 600;
+    padding-right: 8px;
+}
+
+.download-buttons
+{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.download-buttons a
+{
+    margin-right: 8px;
+}
+
+.download-buttons a:last-child
+{
+    margin-right: 0;
+}
+
+.book-not-found-block
+{
+    flex-grow: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

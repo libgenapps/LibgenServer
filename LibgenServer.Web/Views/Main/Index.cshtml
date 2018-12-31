@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Layouts/MainLayout.cshtml";
+}
+
+@section Head
+{
+    <link href="~/Styles/index.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="search-block">
+    <img class="logo" src="~/Images/logo.png" />
+    <form class="search-form" method="post">
+        <input type="text" class="form-control search-input" id="search" name="search"
+               placeholder="Search by title, authors, series, publisher, and ISBN without dashes" autofocus>
+    </form>
+</div>

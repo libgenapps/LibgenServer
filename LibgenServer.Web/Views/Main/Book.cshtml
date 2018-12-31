@@ -1,0 +1,215 @@
+﻿@using LibgenServer.Web.ViewModels.Main
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model BookViewModel
+
+@{
+    Layout = "~/Views/Layouts/MainLayout.cshtml";
+    if (Model != null)
+    {
+        ViewBag.Title = Model.Title;
+    }
+}
+
+@section Head
+{
+    <link href="~/Styles/book.css" rel="stylesheet" type="text/css" />
+}
+
+@if (Model != null)
+{
+    <div class="book">
+        <div class="book-details">
+            <div class="main-attributes">
+                <table>
+                    <tr>
+                        <td class="attribute-name">Title:</td>
+                        <td>@Model.Title</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Authors:</td>
+                        <td>@Model.Authors</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Series:</td>
+                        <td>@Model.Series</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Publisher:</td>
+                        <td>@Model.Publisher</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Year:</td>
+                        <td>@Model.Year</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Language:</td>
+                        <td>@Model.Language</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Format:</td>
+                        <td>@Model.Format</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">ISBN:</td>
+                        <td>@Model.Identifier</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Added:</td>
+                        <td>@Model.AddedDateTime</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Last Modified:</td>
+                        <td>@Model.LastModifiedDateTime</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Library:</td>
+                        <td>@Model.Library</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">File Size:</td>
+                        <td>@Model.FileSize</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Topics:</td>
+                        <td>@Model.Topic</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Volume:</td>
+                        <td>@Model.Volume</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Magazine:</td>
+                        <td>@Model.Periodical</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">City:</td>
+                        <td>@Model.City</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Edition:</td>
+                        <td>@Model.Edition</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Pages:</td>
+                        <td>@Model.Pages</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Tags:</td>
+                        <td>@Model.Tags</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">MD5 Hash:</td>
+                        <td>@Model.Md5Hash</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-name">Comments:</td>
+                        <td>@Model.Commentary</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="secondary-attributes">
+                <div class="identifiers">
+                    <table>
+                        <tr>
+                            <td class="attribute-table-header" colspan="2">Identifiers:</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Libgen ID:</td>
+                            <td>@Model.LibgenId</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">ISSN:</td>
+                            <td>@Model.Issn</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">UDC:</td>
+                            <td>@Model.Udc</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">LBC:</td>
+                            <td>@Model.Lbc</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">LCC:</td>
+                            <td>@Model.Lcc</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">DDC:</td>
+                            <td>@Model.Ddc</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">DOI:</td>
+                            <td>@Model.Doi</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Open Library ID:</td>
+                            <td>@Model.OpenLibraryId</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Google Books ID:</td>
+                            <td>@Model.GoogleBookId</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">ASIN:</td>
+                            <td>@Model.Asin</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="additional-attributes">
+                    <table>
+                        <tr>
+                            <td class="attribute-table-header" colspan="2">Additional Attributes:</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">DPI:</td>
+                            <td>@Model.Dpi</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">OCR:</td>
+                            <td>@Model.Ocr</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Table Of Contents:</td>
+                            <td>@Model.Bookmarked</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Scanned:</td>
+                            <td>@Model.Scanned</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Orientation:</td>
+                            <td>@Model.Orientation</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Paginated:</td>
+                            <td>@Model.Paginated</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Colored:</td>
+                            <td>@Model.Color</td>
+                        </tr>
+                        <tr>
+                            <td class="attribute-name">Cleaned:</td>
+                            <td>@Model.Cleaned</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="download-buttons">
+            @if (Model.IsInLibrary)
+            {
+            <a class="btn btn-primary" asp-controller="Main" asp-action="DownloadBook" asp-route-md5hash="@Model.Md5Hash">Download</a>
+            }
+            <a class="btn btn-outline-primary" href="http://libgen.io/ads.php?md5=@Model.Md5Hash">Download from libgen.io</a>
+            <a class="btn btn-outline-primary" href="http://library1.org/_ads/@Model.Md5Hash">Download from gen.lib.rus.ec</a>
+        </div>
+    </div>
+}
+else
+{
+    <div class="book-not-found-block">
+        <p>Requested book couldn't be found.</p>
+        <a asp-controller="Main" asp-action="Index">Back to the main page</a>
+    </div>
+}

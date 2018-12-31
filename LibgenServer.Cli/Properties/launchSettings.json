@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "LibgenServer.Cli": {
+      "commandName": "Project"
+    }
+  }
+}
